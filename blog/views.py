@@ -334,3 +334,16 @@ class TrendingPostsView(generic.ListView):
         context_data = super(TrendingPostsView, self).get_context_data(**kwargs)
         context_data['filter'] = self.get_filter
         return context_data
+
+class AboutView(generic.ListView):
+    queryset = Post.objects.published()
+    template_name = 'blog/blog_about.html'
+    paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context_data = super(AboutView, self).get_context_data(**kwargs)
+        context_data['page_range'] = GenericPaginator(
+            self.queryset,
+            self.paginate_by,
+            self.request.GET.get('page')
+        ).get_page_range()

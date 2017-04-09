@@ -23,6 +23,7 @@ urlpatterns = [
     # url(r'^$', TemplateView.as_view(template_name='maintenance.html', content_type='text/html')),
 
     url(r'^$', HomepageView.as_view(), name='homepage'),
+    url(r'^about/$', AboutView.as_view(), name='about_page'),
     url(r'^blog/(?P<slug>[\w\-]+)/$', DetailPostView.as_view(), name='detail_post_page'),
     url(r'^search/$', SearchPostsView.as_view(), name='search_posts_page'),
     url(r'^author/(?P<username>[\w\-]+)/$', AuthorPostsView.as_view(), name='author_posts_page'),

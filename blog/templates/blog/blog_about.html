@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Contact - {{ block.super }}{% endblock %}
+{% block canonical_url %}https://{{ request.get_host }}{% url 'contact_page' %}{% endblock %}
+
+{% block content %}
+    <h3>关于本站</h3>
+    <p>
+    本站使用开源博客框架搭建而成，源项目信息可通过右侧窗口查看。<br/>
+    网站主要记录一些自己日常的学习笔记和生活感悟，欢迎大家一起交流<br/>
+    爱生活，爱编程，如若有来生，一蓑烟雨任平生<br/>
+    </p>
+{% endblock %}
